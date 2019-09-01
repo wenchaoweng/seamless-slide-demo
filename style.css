@@ -1,0 +1,33 @@
+*{padding: 0;margin: 0;}
+*{box-sizing: border-box;}
+.window{
+    /* 高宽定死，避免受内部元素影响 */
+    width: 400px;
+    height: 300px;
+    /* 左右设置auto可以水平居中 */
+    margin: 20px auto;
+    overflow: hidden;
+}
+.images{
+    /* display: flex; */
+    position: relative;
+}
+.images > img{
+    /* 图片与父元素一样宽 */
+    width: 100%;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+}
+.images > img.current{
+    left: 0;
+    transform: translateX(0);
+    z-index: 1;
+}
+.images > img.leave{
+    transform: translateX(-100%);
+    z-index: 1;
+}
+.images > img.enter{
+    transform: translateX(100%);
+}
